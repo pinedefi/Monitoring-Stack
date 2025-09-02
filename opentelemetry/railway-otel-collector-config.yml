@@ -37,15 +37,17 @@ exporters:
     tls:
       insecure: true
 
-  # These two service have the same function with Tempo, no need to use all three.
+   otlp/jaeger:
+     endpoint: "${env:RAILWAY_JAEGER_ENDPOINT}" # jaeger.railway.internal:4317
+     tls:
+       insecure: true
+  
+  # The service have the same function with Tempo, no need to use this.
   # zipkin:
   #   endpoint: "${env:RAILWAY_ZINPKIN_ENDPOINT}" # http://zipkin.railway.internal:9411/api/v2/spans
   #   format: proto
 
-  # otlp/jaeger:
-  #   endpoint: "${env:RAILWAY_JAEGER_ENDPOINT}" # jaeger.railway.internal:4317
-  #   tls:
-  #     insecure: true
+
 
 processors:
   batch:
@@ -63,8 +65,8 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/tempo]
-      # exporters: [zipkin, otlp/jaeger, otlp/tempo]
+      #exporters: [otlp/tempo]
+      exporters: [otlp/jaeger, otlp/tempo]
       # exporters: [zipkin, otlp/jaeger, otlp/tempo, debug]
     metrics:
       receivers: [otlp]

@@ -1,4 +1,4 @@
-FROM jaegertracing/all-in-one:1.68.0
+FROM jaegertracing/all-in-one:latest
 
 ENV COLLECTOR_OTLP_ENABLED=true
 

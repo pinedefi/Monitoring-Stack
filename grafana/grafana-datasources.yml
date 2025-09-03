@@ -56,33 +56,33 @@ datasources:
       streamingEnabled:
         search: true
   #   https://grafana.com/docs/grafana/v11.5/datasources/tempo/configure-jaeger-data-source/  
-  - name: Jaeger
-     type: jaeger
-     access: proxy
-     orgId: 1
-     uid: grafana_jaeger
-     url: ${RAILWAY_JAEGER_URL}
-     basicAuth: false
-     basicAuthUser:
-     withCredentials:
-     isDefault: false
-     jsonData:
-       tracesToLogsV2:
-         datasourceUid: 'grafana_loki'
-         filterByTraceID: true
-         filterBySpanID: true
-       tracesToMetrics:
-         datasourceUid: 'grafana_prometheus'
-       serviceMap:
-         datasourceUid: 'grafana_prometheus'
-       nodeGraph:
-         enabled: true
-       search:
-         hide: false
-       traceQuery:
-         timeShiftEnabled: true
-       streamingEnabled:
-         search: true
+  # - name: Jaeger
+  #   type: jaeger
+  #   access: proxy
+  #   orgId: 1
+  #   uid: grafana_jaeger
+  #   url: ${RAILWAY_JAEGER_URL}
+  #   basicAuth: false
+  #   basicAuthUser:
+  #   withCredentials:
+  #   isDefault: false
+  #   jsonData:
+  #     tracesToLogsV2:
+  #       datasourceUid: 'grafana_loki'
+  #       filterByTraceID: true
+  #       filterBySpanID: true
+  #     tracesToMetrics:
+  #       datasourceUid: 'grafana_prometheus'
+  #     serviceMap:
+  #       datasourceUid: 'grafana_prometheus'
+  #     nodeGraph:
+  #       enabled: true
+  #     search:
+  #       hide: false
+  #     traceQuery:
+  #       timeShiftEnabled: true
+  #     streamingEnabled:
+  #       search: true
   # These a service have the same function with Tempo, no need to use all three.
   # - name: Zipkin
   #   type: zipkin

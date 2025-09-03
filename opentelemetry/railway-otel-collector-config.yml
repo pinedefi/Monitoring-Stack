@@ -37,7 +37,7 @@ exporters:
     tls:
       insecure: true
 
-   otlp/jaeger:
+  otlp/jaeger:
      endpoint: "${env:RAILWAY_JAEGER_ENDPOINT}" # jaeger.railway.internal:4317
      tls:
        insecure: true

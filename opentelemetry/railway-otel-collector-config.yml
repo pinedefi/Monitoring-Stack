@@ -78,12 +78,7 @@ service:
       exporters: [otlp/jaeger, otlp/tempo]
       # exporters: [zipkin, otlp/jaeger, otlp/tempo, debug]
     metrics:
-      receivers: [postgresql]
-      processors: [batch]
-      exporters: [prometheus]
-      # exporters: [prometheusremotewrite, prometheus, debug]
-
-      receivers: [otlp]
+      receivers: [otlp, postgresql]
       processors: [batch]
       exporters: [prometheus]
       # exporters: [prometheusremotewrite, prometheus, debug]

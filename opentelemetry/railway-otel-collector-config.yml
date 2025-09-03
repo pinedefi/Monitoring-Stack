@@ -21,8 +21,7 @@ postgresql:
     transport: tcp
     username: postgres
     password: sfmSVPRSwJwUOoteRTwNqzdNpXTnOEQL
-    databases:
-      - postgres
+    databases: postgres
     collection_interval: 10s
 
 exporters:
@@ -81,7 +80,7 @@ service:
       receivers: [otlp, postgresql]
       processors: [batch]
       exporters: [prometheus]
-      # exporters: [prometheusremotewrite, prometheus, debug]
+      
     logs:
       receivers: [otlp]
       processors: [batch]

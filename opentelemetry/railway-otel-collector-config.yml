@@ -16,13 +16,13 @@ receivers:
           max_age: 7200      
         endpoint: 0.0.0.0:4318
 
-postgresql:
-    endpoint: postgres.railway.internal:5432
-    transport: tcp
-    username: postgres
-    password: sfmSVPRSwJwUOoteRTwNqzdNpXTnOEQL
-    databases: postgres
-    collection_interval: 10s
+#postgresql:
+#    endpoint: postgres.railway.internal:5432
+#    transport: tcp
+#    username: postgres
+#    password: sfmSVPRSwJwUOoteRTwNqzdNpXTnOEQL
+#    databases: postgres
+#    collection_interval: 10s
 
 exporters:
   # debug:
@@ -77,7 +77,7 @@ service:
       exporters: [otlp/jaeger, otlp/tempo]
       # exporters: [zipkin, otlp/jaeger, otlp/tempo, debug]
     metrics:
-      receivers: [otlp, postgresql]
+      receivers: [otlp]
       processors: [batch]
       exporters: [prometheus]
       

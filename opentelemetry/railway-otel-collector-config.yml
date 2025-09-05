@@ -74,7 +74,7 @@ service:
       receivers: [otlp]
       processors: [batch]
       #exporters: [otlp/tempo]
-      exporters: [otlp/jaeger, otlp/tempo]
+      exporters: [otlp/tempo]
       # exporters: [zipkin, otlp/jaeger, otlp/tempo, debug]
     metrics:
       receivers: [otlp]

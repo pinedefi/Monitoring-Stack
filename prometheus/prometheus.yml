@@ -27,7 +27,7 @@ scrape_configs:
   - job_name: 'jaeger'
     scrape_interval: 5s
     static_configs:
-      - targets: ['Jaeger:4317']
+      - targets: ['Jaeger:4318']
 
   - job_name: 'Alex_Instance'
     scrape_interval: 5s

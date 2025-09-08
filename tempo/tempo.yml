@@ -41,6 +41,7 @@ distributor:
           endpoint: "0.0.0.0:4318"
 
 metrics_generator:
+  enabled: true
   registry:
     external_labels:
       source: tempo

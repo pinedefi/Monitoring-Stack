@@ -40,13 +40,13 @@ distributor:
         http:
           endpoint: "0.0.0.0:4318"
 
-Jaeger:
-  grpc:
-   enabled: true
-   endpoint: 0.0.0.0:14250 # gRPC API for Jaeger-query
-   thrift_http:
-    enabled: true
-    endpoint: 0.0.0.0:14268 " HTTP API for Jaeger-query
+#Jaeger:
+#  grpc:
+#   enabled: true
+#   endpoint: 0.0.0.0:14250 # gRPC API for Jaeger-query
+#   thrift_http:
+#    enabled: true
+#    endpoint: 0.0.0.0:14268 " HTTP API for Jaeger-query
 
 metrics_generator:
   registry:

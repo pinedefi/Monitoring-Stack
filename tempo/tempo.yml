@@ -40,6 +40,14 @@ distributor:
         http:
           endpoint: "0.0.0.0:4318"
 
+Jaeger:
+  grpc:
+   enabled: true
+   endpoint: 0.0.0.0:14250 # gRPC API for Jaeger-query
+   thrift_http:
+    enabled: true
+    endpoint: 0.0.0.0:14268 " HTTP API for Jaeger-query
+
 metrics_generator:
   registry:
     external_labels:
@@ -63,4 +71,3 @@ overrides:
     metrics_generator:
       processors: [service-graphs, span-metrics, local-blocks] # enables metrics generator
       generate_native_histograms: both
-

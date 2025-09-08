@@ -33,8 +33,3 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['just-logically-goshawk.ngrok-free.app']
-
-  - job_name: 'Lavarage-API'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['lavarage-api.railway.internal']
